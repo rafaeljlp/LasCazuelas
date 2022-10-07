@@ -26,14 +26,17 @@ class Router {
         // '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar', 
         '/clientes/crear', '/clientes/actualizar', '/clientes/eliminar'];        
 
-        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-        $metodo = $_SERVER['REQUEST_METHOD'];
-
-        if($metodo === 'GET') {
-            $fn = $this->rutasGET[$urlActual] ?? null;            
+        $urlActual = ($_SERVER['REQUEST_URI'] === '') ? '/' :  $_SERVER['REQUEST_URI'] ;
+        $method = $_SERVER['REQUEST_METHOD'];
+            
+        //dividimos la URL actual cada vez que exista un '?' eso indica que se están pasando variables por la url
+        $splitURL = explode('?', $urlActual);
+        // debuguear($splitURL);
+        
+        if ($method === 'GET') {
+            $fn = $this->getRoutes[$splitURL[0]] ?? null; //$splitURL[0] contiene la URL sin variables 
         } else {
-            // debuguear($this);
-            $fn = $this->rutasPOST[$urlActual] ?? null;
+            $fn = $this->postRoutes[$splitURL[0]] ?? null;
         }
 
         // Proteger las rutas - in_array: permite revisar un elemento en un arreglo
