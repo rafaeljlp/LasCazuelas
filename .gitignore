@@ -8,4 +8,4 @@ package.json
 package-lock.json
 cypress.json
 .DS_Store
-.env
+# .env
