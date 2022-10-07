@@ -1,0 +1,9 @@
+src/
+vendor/
+node_modules/
+lascazuelas.sql
+gulpfile.js
+package.json
+package-lock.json
+.DS_Store
+.env
