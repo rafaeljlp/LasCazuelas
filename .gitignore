@@ -6,5 +6,6 @@ lascazuelas.sql
 gulpfile.js
 package.json
 package-lock.json
+cypress.json
 .DS_Store
 .env
