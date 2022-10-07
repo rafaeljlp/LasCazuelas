@@ -1,6 +1,7 @@
 src/
 vendor/
 node_modules/
+cypress/
 lascazuelas.sql
 gulpfile.js
 package.json
