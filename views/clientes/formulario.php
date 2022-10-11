@@ -11,7 +11,7 @@
         value="<?php echo s( $cliente->apellido ); ?>">
         
     <label for="visitas">Visitas:</label> 
-    <input class="visitas" type="number" id="visitas" name="cliente[visitas]" min="0" placeholder="Visitas" 
+    <input type="number" id="visitas" name="cliente[visitas]" min="0" placeholder="Visitas" 
         value="<?php echo s( $cliente->visitas ); ?>">
 
     <!-- <label for="imagen">Imagen:</label>
